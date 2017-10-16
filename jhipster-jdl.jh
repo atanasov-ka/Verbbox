@@ -4,7 +4,6 @@ entity Box {
   	firstLanguage String required minlength(2),
   	secondLanguage String required minlength(2),
   	description String,
-    ownerUserId Long,
   	created LocalDate
 }
 
@@ -16,7 +15,8 @@ entity Verb {
 
 // training
 entity Play {
-    progress Integer
+    progress Integer,
+    lastActiviry LocalDate
 }
 
 entity VerbHistory {
@@ -27,11 +27,16 @@ entity VerbHistory {
 }
 
 relationship ManyToOne {
-	Box{user} to User
+	Box{owner} to User,
+    Play{player} to User,
+    VerbHistory{user} to Play
 }
 
 relationship OneToMany {
   Box{verb} to Verb,
-  Box{play} to Play,
-  Play{verbHistory} to VerbHistory
+  Box{play} to Play
+}
+
+relationship OneToOne {
+	Verb{verbHistory} to VerbHistory
 }
