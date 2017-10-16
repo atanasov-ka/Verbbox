@@ -38,5 +38,5 @@ relationship OneToMany {
 }
 
 relationship OneToOne {
-	Verb{verbHistory} to VerbHistory
+	VerbHistory{verb} to Verb
 }
