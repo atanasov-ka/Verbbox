@@ -1,0 +1,37 @@
+// entities
+entity Box {
+	name String required minlength(1),
+  	firstLanguage String required minlength(2),
+  	secondLanguage String required minlength(2),
+  	description String,
+    ownerUserId Long,
+  	created LocalDate
+}
+
+entity Verb {
+  	front String required,
+  	back String required,
+    created LocalDate
+}
+
+// training
+entity Play {
+    progress Integer
+}
+
+entity VerbHistory {
+	frontBackYes Integer,
+    backFrontYes Integer,
+    frontBackNo Integer,
+    backFrontNo Integer,
+}
+
+relationship ManyToOne {
+	Box{user} to User
+}
+
+relationship OneToMany {
+  Box{verb} to Verb,
+  Box{play} to Play,
+  Play{verbHistory} to VerbHistory
+}
