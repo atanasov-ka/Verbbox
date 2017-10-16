@@ -1,0 +1,71 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myVerbLabel" jhiTranslate="verbboxApp.verb.home.createOrEditLabel">Create or edit a Verb</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!verb.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="verb.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="verbboxApp.verb.front" for="field_front">Front</label>
+            <input type="text" class="form-control" name="front" id="field_front"
+                [(ngModel)]="verb.front" required />
+            <div [hidden]="!(editForm.controls.front?.dirty && editForm.controls.front?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.front?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="verbboxApp.verb.back" for="field_back">Back</label>
+            <input type="text" class="form-control" name="back" id="field_back"
+                [(ngModel)]="verb.back" required />
+            <div [hidden]="!(editForm.controls.back?.dirty && editForm.controls.back?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.back?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="verbboxApp.verb.created" for="field_created">Created</label>
+            <div class="input-group">
+                <input id="field_created" type="text" class="form-control" name="created" ngbDatepicker  #createdDp="ngbDatepicker" [(ngModel)]="verb.created"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-secondary" (click)="createdDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="verbboxApp.verb.box" for="field_box">Box</label>
+            <select class="form-control" id="field_box" name="box" [(ngModel)]="verb.box" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="boxOption.id === verb.box?.id ? verb.box : boxOption" *ngFor="let boxOption of boxes; trackBy: trackBoxById">{{boxOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="verbboxApp.verb.verbHistory" for="field_verbHistory">Verb History</label>
+            <select class="form-control" id="field_verbHistory" name="verbHistory" [(ngModel)]="verb.verbHistory">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="verbHistoryOption.id === verb.verbHistory?.id ? verb.verbHistory : verbHistoryOption" *ngFor="let verbHistoryOption of verbhistories; trackBy: trackVerbHistoryById">{{verbHistoryOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

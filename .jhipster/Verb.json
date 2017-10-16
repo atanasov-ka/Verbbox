@@ -1,0 +1,44 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "box",
+            "otherEntityName": "box",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "verbHistory",
+            "otherEntityName": "verbHistory",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "verb"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "front",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "back",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "created",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20171016194512",
+    "entityTableName": "verb",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

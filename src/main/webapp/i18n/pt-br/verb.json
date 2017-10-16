@@ -1,0 +1,25 @@
+{
+    "verbboxApp": {
+        "verb" : {
+            "home": {
+                "title": "Verbs",
+                "createLabel": "Criar novo Verb",
+                "createOrEditLabel": "Criar ou editar Verb"
+            },
+            "created": "Um novo Verb foi criado com o identificador {{ param }}",
+            "updated": "Um Verb foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Verb foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Verb {{ id }}?"
+            },
+            "detail": {
+                "title": "Verb"
+            },
+            "front": "Front",
+            "back": "Back",
+            "created": "Created",
+            "box": "Box",
+            "verbHistory": "Verb History"
+        }
+    }
+}

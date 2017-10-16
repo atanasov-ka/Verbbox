@@ -1,0 +1,28 @@
+{
+    "verbboxApp": {
+        "box" : {
+            "home": {
+                "title": "Boxes",
+                "createLabel": "Maak een nieuwe Box",
+                "createOrEditLabel": "Maak of wijzig een Box"
+            },
+            "created": "A new Box is created with identifier {{ param }}",
+            "updated": "A Box is updated with identifier {{ param }}",
+            "deleted": "A Box is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u Box {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Box"
+            },
+            "name": "Name",
+            "firstLanguage": "First Language",
+            "secondLanguage": "Second Language",
+            "description": "Description",
+            "created": "Created",
+            "verb": "Verb",
+            "play": "Play",
+            "owner": "Owner"
+        }
+    }
+}

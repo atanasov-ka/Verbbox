@@ -1,0 +1,45 @@
+
+<div *ngIf="verb">
+    <h2><span jhiTranslate="verbboxApp.verb.detail.title">Verb</span> {{verb.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="verbboxApp.verb.front">Front</span></dt>
+        <dd>
+            <span>{{verb.front}}</span>
+        </dd>
+        <dt><span jhiTranslate="verbboxApp.verb.back">Back</span></dt>
+        <dd>
+            <span>{{verb.back}}</span>
+        </dd>
+        <dt><span jhiTranslate="verbboxApp.verb.created">Created</span></dt>
+        <dd>
+            <span>{{verb.created | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="verbboxApp.verb.box">Box</span></dt>
+        <dd>
+            <div *ngIf="verb.box">
+                <a [routerLink]="['/box', verb.box?.id]">{{verb.box?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="verbboxApp.verb.verbHistory">Verb History</span></dt>
+        <dd>
+            <div *ngIf="verb.verbHistory">
+                <a [routerLink]="['/verb-history', verb.verbHistory?.id]">{{verb.verbHistory?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'verb/'+ verb.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

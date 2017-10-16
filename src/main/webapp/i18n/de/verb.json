@@ -1,0 +1,25 @@
+{
+    "verbboxApp": {
+        "verb" : {
+            "home": {
+                "title": "Verbs",
+                "createLabel": "Verb erstellen",
+                "createOrEditLabel": "Verb erstellen oder bearbeiten"
+            },
+            "created": "Verb erstellt mit ID {{ param }}",
+            "updated": "Verb aktualisiert mit ID {{ param }}",
+            "deleted": "Verb gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Verb {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Verb"
+            },
+            "front": "Front",
+            "back": "Back",
+            "created": "Created",
+            "box": "Box",
+            "verbHistory": "Verb History"
+        }
+    }
+}

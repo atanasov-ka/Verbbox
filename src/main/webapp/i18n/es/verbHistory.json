@@ -1,0 +1,25 @@
+{
+    "verbboxApp": {
+        "verbHistory" : {
+            "home": {
+                "title": "Verb Histories",
+                "createLabel": "Crear nuevo Verb History",
+                "createOrEditLabel": "Crear o editar Verb History"
+            },
+            "created": "Un nuevo Verb History ha sido creado con el identificador {{ param }}",
+            "updated": "Un Verb History ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Verb History ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Verb History {{ id }}?"
+            },
+            "detail": {
+                "title": "Verb History"
+            },
+            "frontBackYes": "Front Back Yes",
+            "backFrontYes": "Back Front Yes",
+            "frontBackNo": "Front Back No",
+            "backFrontNo": "Back Front No",
+            "user": "User"
+        }
+    }
+}
