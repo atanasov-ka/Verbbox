@@ -4,19 +4,19 @@ entity Box {
   	firstLanguage String required minlength(2),
   	secondLanguage String required minlength(2),
   	description String,
-  	created LocalDate
+  	created ZonedDateTime
 }
 
 entity Verb {
   	front String required,
   	back String required,
-    created LocalDate
+    created ZonedDateTime
 }
 
 // training
 entity Play {
     progress Integer,
-    lastActiviry LocalDate
+    lastActiviry ZonedDateTime
 }
 
 entity VerbHistory {
@@ -26,6 +26,11 @@ entity VerbHistory {
     backFrontNo Integer,
 }
 
+entity Circle {
+	name String,
+    created ZonedDateTime
+}
+
 relationship ManyToOne {
 	Box{owner} to User,
     Play{player} to User,
@@ -33,10 +38,13 @@ relationship ManyToOne {
 }
 
 relationship OneToMany {
-  Box{verb} to Verb,
-  Box{play} to Play
+  Box{verb} to Verb{box(name)},
+  Box{play} to Play{box(name)}
 }
 
 relationship OneToOne {
-	VerbHistory{verb} to Verb
+	VerbHistory{verb} to Verb,
+    Circle{owner} to User,
+    Circle{friend} to User,
+    Box{sharedWith} to Circle{box(name)}
 }
