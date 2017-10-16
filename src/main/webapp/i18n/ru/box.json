@@ -1,0 +1,28 @@
+{
+    "verbboxApp": {
+        "box" : {
+            "home": {
+                "title": "Boxes",
+                "createLabel": "Создать новый Box",
+                "createOrEditLabel": "Создать или отредактировать Box"
+            },
+            "created": "Новый Box создан с идентификатором {{ param }}",
+            "updated": "Box обновлен с идентификатором {{ param }}",
+            "deleted": "Box удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Box {{ id }}?"
+            },
+            "detail": {
+                "title": "Box"
+            },
+            "name": "Name",
+            "firstLanguage": "First Language",
+            "secondLanguage": "Second Language",
+            "description": "Description",
+            "created": "Created",
+            "verb": "Verb",
+            "play": "Play",
+            "owner": "Owner"
+        }
+    }
+}

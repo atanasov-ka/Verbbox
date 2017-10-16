@@ -1,0 +1,39 @@
+
+<div *ngIf="play">
+    <h2><span jhiTranslate="verbboxApp.play.detail.title">Play</span> {{play.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="verbboxApp.play.progress">Progress</span></dt>
+        <dd>
+            <span>{{play.progress}}</span>
+        </dd>
+        <dt><span jhiTranslate="verbboxApp.play.lastActiviry">Last Activiry</span></dt>
+        <dd>
+            <span>{{play.lastActiviry | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="verbboxApp.play.box">Box</span></dt>
+        <dd>
+            <div *ngIf="play.box">
+                <a [routerLink]="['/box', play.box?.id]">{{play.box?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="verbboxApp.play.player">Player</span></dt>
+        <dd>
+            {{play.player?.id}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'play/'+ play.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

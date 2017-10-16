@@ -44,6 +44,12 @@ public class CacheConfiguration {
             cm.createCache(com.verbbox.app.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.verbbox.app.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.verbbox.app.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.verbbox.app.domain.Box.class.getName(), jcacheConfiguration);
+            cm.createCache(com.verbbox.app.domain.Box.class.getName() + ".verbs", jcacheConfiguration);
+            cm.createCache(com.verbbox.app.domain.Box.class.getName() + ".plays", jcacheConfiguration);
+            cm.createCache(com.verbbox.app.domain.Verb.class.getName(), jcacheConfiguration);
+            cm.createCache(com.verbbox.app.domain.Play.class.getName(), jcacheConfiguration);
+            cm.createCache(com.verbbox.app.domain.VerbHistory.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,42 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "verb",
+            "otherEntityName": "verb",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "verbHistory"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "user",
+            "otherEntityName": "play",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "frontBackYes",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "backFrontYes",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "frontBackNo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "backFrontNo",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20171016200336",
+    "entityTableName": "verb_history",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

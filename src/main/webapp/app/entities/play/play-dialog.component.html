@@ -1,0 +1,54 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myPlayLabel" jhiTranslate="verbboxApp.play.home.createOrEditLabel">Create or edit a Play</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!play.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="play.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="verbboxApp.play.progress" for="field_progress">Progress</label>
+            <input type="number" class="form-control" name="progress" id="field_progress"
+                [(ngModel)]="play.progress"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="verbboxApp.play.lastActiviry" for="field_lastActiviry">Last Activiry</label>
+            <div class="input-group">
+                <input id="field_lastActiviry" type="text" class="form-control" name="lastActiviry" ngbDatepicker  #lastActiviryDp="ngbDatepicker" [(ngModel)]="play.lastActiviry"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-secondary" (click)="lastActiviryDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="verbboxApp.play.box" for="field_box">Box</label>
+            <select class="form-control" id="field_box" name="box" [(ngModel)]="play.box" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="boxOption.id === play.box?.id ? play.box : boxOption" *ngFor="let boxOption of boxes; trackBy: trackBoxById">{{boxOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="verbboxApp.play.player" for="field_player">Player</label>
+            <select class="form-control" id="field_player" name="player" [(ngModel)]="play.player" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="userOption.id === play.player?.id ? play.player : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
