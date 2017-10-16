@@ -1,0 +1,26 @@
+{
+    "verbboxApp": {
+        "verbHistory" : {
+            "home": {
+                "title": "Verb Histories",
+                "createLabel": "Maak een nieuwe Verb History",
+                "createOrEditLabel": "Maak of wijzig een Verb History"
+            },
+            "created": "A new Verb History is created with identifier {{ param }}",
+            "updated": "A Verb History is updated with identifier {{ param }}",
+            "deleted": "A Verb History is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u Verb History {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Verb History"
+            },
+            "frontBackYes": "Front Back Yes",
+            "backFrontYes": "Back Front Yes",
+            "frontBackNo": "Front Back No",
+            "backFrontNo": "Back Front No",
+            "verb": "Verb",
+            "user": "User"
+        }
+    }
+}

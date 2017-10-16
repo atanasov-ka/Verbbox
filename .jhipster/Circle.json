@@ -1,0 +1,43 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "owner",
+            "otherEntityName": "user",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "circle"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "friend",
+            "otherEntityName": "user",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "circle"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "box",
+            "otherEntityName": "box",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "sharedWith"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "created",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20171016204915",
+    "entityTableName": "circle",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

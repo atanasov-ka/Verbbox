@@ -1,0 +1,25 @@
+{
+    "verbboxApp": {
+        "circle" : {
+            "home": {
+                "title": "Circles",
+                "createLabel": "Créer un nouveau Circle",
+                "createOrEditLabel": "Créer ou éditer un Circle"
+            },
+            "created": "Un nouveau Circle a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Circle avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Circle avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Circle {{ id }} ?"
+            },
+            "detail": {
+                "title": "Circle"
+            },
+            "name": "Name",
+            "created": "Created",
+            "owner": "Owner",
+            "friend": "Friend",
+            "box": "Box"
+        }
+    }
+}

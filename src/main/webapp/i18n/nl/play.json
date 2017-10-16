@@ -1,0 +1,24 @@
+{
+    "verbboxApp": {
+        "play" : {
+            "home": {
+                "title": "Plays",
+                "createLabel": "Maak een nieuwe Play",
+                "createOrEditLabel": "Maak of wijzig een Play"
+            },
+            "created": "A new Play is created with identifier {{ param }}",
+            "updated": "A Play is updated with identifier {{ param }}",
+            "deleted": "A Play is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u Play {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Play"
+            },
+            "progress": "Progress",
+            "lastActiviry": "Last Activiry",
+            "player": "Player",
+            "box": "Box"
+        }
+    }
+}

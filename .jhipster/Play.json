@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "player",
+            "otherEntityName": "user",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "box",
+            "otherEntityName": "box",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "progress",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "lastActiviry",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20171016204913",
+    "entityTableName": "play",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

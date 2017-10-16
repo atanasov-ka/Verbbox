@@ -1,0 +1,26 @@
+{
+    "verbboxApp": {
+        "verbHistory" : {
+            "home": {
+                "title": "Verb Histories",
+                "createLabel": "Verb History erstellen",
+                "createOrEditLabel": "Verb History erstellen oder bearbeiten"
+            },
+            "created": "Verb History erstellt mit ID {{ param }}",
+            "updated": "Verb History aktualisiert mit ID {{ param }}",
+            "deleted": "Verb History gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Verb History {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Verb History"
+            },
+            "frontBackYes": "Front Back Yes",
+            "backFrontYes": "Back Front Yes",
+            "frontBackNo": "Front Back No",
+            "backFrontNo": "Back Front No",
+            "verb": "Verb",
+            "user": "User"
+        }
+    }
+}

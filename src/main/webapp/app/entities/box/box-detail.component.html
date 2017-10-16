@@ -1,0 +1,51 @@
+
+<div *ngIf="box">
+    <h2><span jhiTranslate="verbboxApp.box.detail.title">Box</span> {{box.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="verbboxApp.box.name">Name</span></dt>
+        <dd>
+            <span>{{box.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="verbboxApp.box.firstLanguage">First Language</span></dt>
+        <dd>
+            <span>{{box.firstLanguage}}</span>
+        </dd>
+        <dt><span jhiTranslate="verbboxApp.box.secondLanguage">Second Language</span></dt>
+        <dd>
+            <span>{{box.secondLanguage}}</span>
+        </dd>
+        <dt><span jhiTranslate="verbboxApp.box.description">Description</span></dt>
+        <dd>
+            <span>{{box.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="verbboxApp.box.created">Created</span></dt>
+        <dd>
+            <span>{{box.created | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="verbboxApp.box.sharedWith">Shared With</span></dt>
+        <dd>
+            <div *ngIf="box.sharedWith">
+                <a [routerLink]="['/circle', box.sharedWith?.id]">{{box.sharedWith?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="verbboxApp.box.owner">Owner</span></dt>
+        <dd>
+            {{box.owner?.id}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'box/'+ box.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

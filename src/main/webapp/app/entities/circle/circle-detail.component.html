@@ -1,0 +1,37 @@
+
+<div *ngIf="circle">
+    <h2><span jhiTranslate="verbboxApp.circle.detail.title">Circle</span> {{circle.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="verbboxApp.circle.name">Name</span></dt>
+        <dd>
+            <span>{{circle.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="verbboxApp.circle.created">Created</span></dt>
+        <dd>
+            <span>{{circle.created | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="verbboxApp.circle.owner">Owner</span></dt>
+        <dd>
+            {{circle.owner?.id}}
+        </dd>
+        <dt><span jhiTranslate="verbboxApp.circle.friend">Friend</span></dt>
+        <dd>
+            {{circle.friend?.id}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'circle/'+ circle.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

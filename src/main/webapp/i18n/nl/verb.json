@@ -1,0 +1,24 @@
+{
+    "verbboxApp": {
+        "verb" : {
+            "home": {
+                "title": "Verbs",
+                "createLabel": "Maak een nieuwe Verb",
+                "createOrEditLabel": "Maak of wijzig een Verb"
+            },
+            "created": "A new Verb is created with identifier {{ param }}",
+            "updated": "A Verb is updated with identifier {{ param }}",
+            "deleted": "A Verb is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u Verb {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Verb"
+            },
+            "front": "Front",
+            "back": "Back",
+            "created": "Created",
+            "box": "Box"
+        }
+    }
+}
